@@ -5,6 +5,8 @@ import com.example.xaingce.zhuang.ImageService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
@@ -25,6 +27,8 @@ public class Controller {
 
     @Autowired
     ImageService imageService;
+
+
 
     /**
      * 简单图片聚合
@@ -65,6 +69,16 @@ public class Controller {
         }
     }
 
+    @RequestMapping("/admin")
+    @ResponseBody
+    public String productInfo(){
+        return " admin home page ";
+    }
+    @RequestMapping("/product")
+    @ResponseBody
+    public String productInfo1(){
+        return " some product info ";
+    }
     /**
      * 复杂图片聚合
      * @param
@@ -112,3 +126,5 @@ public class Controller {
         }
     }
 }
+
+
